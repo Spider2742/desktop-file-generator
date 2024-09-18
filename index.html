@@ -1,33 +1,105 @@
-from flask import Flask, request, render_template
-
-app = Flask(__name__)
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    if request.method == 'POST':
-        name = request.form['name']
-        comment = request.form['comment']
-        exec = request.form['exec']
-        terminal = request.form['terminal']
-
-        desktop_file_content = f"""
-[Desktop Entry]
-# Created by desktopfilecreator.com
-Type=Application
-Version=1.0
-Name={name}
-Comment={comment}
-Path=
-Exec={exec}
-Terminal={terminal}
-"""
-
-        local_install_command = f"echo -e \"{desktop_file_content}\" > ~/.local/share/applications/{name}.desktop"
-        system_install_command = f"echo -e \"{desktop_file_content}\" > /usr/local/share/applications/{name}.desktop"
-
-        return render_template('install.html', name=name, comment=comment, exec=exec, terminal=terminal, desktop_file_content=desktop_file_content, local_install_command=local_install_command, system_install_command=system_install_command)
-
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Desktop File Creator</title>
+</head>
+<body>
+    <h1>Desktop File Creator</h1>
+    <p>About</p>
+    <p>This website is brought to you in hope that you will continue to use linux and open source software!</p>
+    <p>I am a software engineer, but, more important, I am a linux user!</p>
+    <p>Please share!</p>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment"><br><br>
+        <label for="exec">Exec:</label>
+        <input type="text" id="exec" name="exec"><br><br>
+        <label for="terminal">Terminal:</label>
+        <input type="radio" id="true" name="terminal" value="true">
+        <label for="true">True</label>
+        <input type="radio" id="false" name="terminal" value="false">
+        <label for="false">False</label><br><br>
+        <input type="submit" value="Create a .desktop file">
+    </form>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Desktop File Creator</title>
+</head>
+<body>
+    <h1>Desktop File Creator</h1>
+    <p>About</p>
+    <p>This website is brought to you in hope that you will continue to use linux and open source software!</p>
+    <p>I am a software engineer, but, more important, I am a linux user!</p>
+    <p>Please share!</p>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment"><br><br>
+        <label for="exec">Exec:</label>
+        <input type="text" id="exec" name="exec"><br><br>
+        <label for="terminal">Terminal:</label>
+        <input type="radio" id="true" name="terminal" value="true">
+        <label for="true">True</label>
+        <input type="radio" id="false" name="terminal" value="false">
+        <label for="false">False</label><br><br>
+        <input type="submit" value="Create a .desktop file">
+    </form>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Desktop File Creator</title>
+</head>
+<body>
+    <h1>Desktop File Creator</h1>
+    <p>About</p>
+    <p>This website is brought to you in hope that you will continue to use linux and open source software!</p>
+    <p>I am a software engineer, but, more important, I am a linux user!</p>
+    <p>Please share!</p>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment"><br><br>
+        <label for="exec">Exec:</label>
+        <input type="text" id="exec" name="exec"><br><br>
+        <label for="terminal">Terminal:</label>
+        <input type="radio" id="true" name="terminal" value="true">
+        <label for="true">True</label>
+        <input type="radio" id="false" name="terminal" value="false">
+        <label for="false">False</label><br><br>
+        <input type="submit" value="Create a .desktop file">
+    </form>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>Desktop File Creator</title>
+</head>
+<body>
+    <h1>Desktop File Creator</h1>
+    <p>About</p>
+    <p>This website is brought to you in hope that you will continue to use linux and open source software!</p>
+    <p>I am a software engineer, but, more important, I am a linux user!</p>
+    <p>Please share!</p>
+    <form action="" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" name="comment"><br><br>
+        <label for="exec">Exec:</label>
+        <input type="text" id="exec" name="exec"><br><br>
+        <label for="terminal">Terminal:</label>
+        <input type="radio" id="true" name="terminal" value="true">
+        <label for="true">True</label>
+        <input type="radio" id="false" name="terminal" value="false">
+        <label for="false">False</label><br><br>
+        <input type="submit" value="Create a .desktop file">
+    </form>
+</body>
+</html>
